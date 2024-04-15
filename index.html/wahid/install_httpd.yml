@@ -1,0 +1,15 @@
+---
+- name: Install Apache HTTP server (httpd) on Ubuntu
+  hosts: server2
+  become: yes
+
+  tasks:
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+
+    - name: Install Apache HTTP server (httpd)
+      apt:
+        name: apache2
+        state: present
+
